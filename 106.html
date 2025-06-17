@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد بايو Free Fire احترافي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            color: #FFD700;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-generate {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            box-shadow: 0 4px 15px 0 rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(255, 107, 107, 0.6);
+        }
+
+        .result-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .result-title {
+            color: #FFD700;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .bio-option {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bio-preview {
+            background: linear-gradient(135deg, #0f3460, #16537e);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            border: 2px solid #FFD700;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .bio-option:hover {
+            border-color: #FFD700;
+            transform: scale(1.01);
+        }
+
+        .bio-option::after {
+            content: "الكود الخام - اضغط للنسخ";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            background: rgba(255, 215, 0, 0.8);
+            color: black;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .bio-option:hover::after {
+            opacity: 1;
+        }
+
+        .social-link {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        .social-link a {
+            color: #FF69B4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link a:hover {
+            color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .bio-option {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">مولد بايو Free Fire احترافي</h1>
+            <p class="subtitle">10 اقتراحات بايو احترافية مع معاينة الشكل النهائي</p>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-generate" onclick="generateBios()">توليد 10 اقتراحات جديدة</button>
+        </div>
+
+        <div class="result-container">
+            <h3 class="result-title">الاقتراحات المولدة مع معاينة الشكل النهائي:</h3>
+            <div id="biosContainer"></div>
+        </div>
+
+        <div class="social-link">
+            <a href="https://www.tiktok.com/@zakaria0_dz?_t=ZM-8xGzPT2HmiO&_r=1" target="_blank">
+                تابعني على تيك توك - @zakaria0_dz
+            </a>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">تم نسخ البايو بنجاح!</div>
+
+    <script>
+        // قاعدة بيانات موسعة من الكلمات والعبارات
+        const legendaryWords = [
+            "LEGENDARY ASSASSIN", "IMMORTAL CHAMPION", "MYTHIC DESTROYER", "ETERNAL WARRIOR",
+            "GODLIKE SLAYER", "SUPREME KILLER", "ULTIMATE HUNTER", "DIVINE SNIPER",
+            "PHANTOM LEGEND", "SHADOW MASTER", "DEADLY EXECUTIONER", "COSMIC ELIMINATOR",
+            "INFERNAL BEAST", "CELESTIAL FIGHTER", "DEMONIC PLAYER", "ANGELIC DESTROYER",
+            "NUCLEAR WARRIOR", "ATOMIC SLAYER", "QUANTUM KILLER", "GALACTIC CHAMPION",
+            "INVINCIBLE HERO", "UNSTOPPABLE FORCE", "UNTOUCHABLE LEGEND", "UNBREAKABLE SPIRIT",
+            "FEARLESS GUARDIAN", "MERCILESS HUNTER", "RUTHLESS PREDATOR", "SAVAGE ELIMINATOR"
+        ];
+
+        const actionPhrases = [
+            "NEVER SURRENDER ALWAYS FIGHT", "BORN TO DOMINATE THE BATTLEFIELD", "HEADSHOT MACHINE NEVER MISS",
+            "RUSH WITHOUT FEAR OR MERCY", "KILL OR BE KILLED NO CHOICE", "CONQUER ALL ENEMIES DESTROY ALL",
+            "ALWAYS CLUTCHING NEVER FAILING", "DOMINATE EVERY SINGLE MATCH", "ELIMINATE WITHOUT ANY HESITATION",
+            "MASTER OF EVERY SINGLE WEAPON", "CHAMPION IN EVERY BATTLE ZONE", "DESTROYER OF NOOB PLAYERS",
+            "LEGENDARY SKILLS UNMATCHED POWER", "PERFECT AIM DEADLY PRECISION", "UNSTOPPABLE KILLING MACHINE",
+            "FEARED BY ALL RESPECTED BY NONE", "NIGHTMARE OF EVERY OPPONENT", "TERROR OF THE BATTLEGROUND",
+            "DEATH DEALER SOUL COLLECTOR", "BLOOD THIRSTY VICTORY HUNGRY", "MERCILESS EXECUTIONER OF JUSTICE",
+            "BRINGER OF CHAOS AND DESTRUCTION", "MASTER OF PAIN AND SUFFERING", "RULER OF DEATH AND DARKNESS",
+            "CHAMPION OF WAR AND VIOLENCE", "KING OF BATTLE AND COMBAT", "LORD OF DESTRUCTION AND MAYHEM"
+        ];
+
+        const powerTitles = [
+            "DIAMOND RANK ASSASSIN", "HEROIC TIER SNIPER", "GRANDMASTER ELITE KILLER", "CONQUEROR LEVEL BEAST",
+            "MYTHIC RANK DESTROYER", "LEGENDARY TIER HUNTER", "IMMORTAL RANK SLAYER", "DIVINE TIER WARRIOR",
+            "SUPREME RANK ELIMINATOR", "ULTIMATE TIER CHAMPION", "GODLIKE RANK MASTER", "CELESTIAL TIER LEGEND",
+            "PHANTOM RANK EXECUTIONER", "SHADOW TIER PREDATOR", "DEADLY RANK MACHINE", "COSMIC TIER FORCE",
+            "NUCLEAR RANK WEAPON", "ATOMIC TIER DESTROYER", "QUANTUM RANK KILLER", "GALACTIC TIER HERO",
+            "INVINCIBLE RANK GUARDIAN", "UNTOUCHABLE TIER FIGHTER", "UNBREAKABLE RANK SPIRIT", "FEARLESS TIER WARRIOR",
+            "MERCILESS RANK HUNTER", "RUTHLESS TIER SLAYER", "SAVAGE RANK ELIMINATOR", "BRUTAL TIER DESTROYER"
+        ];
+
+        const gameStats = [
+            "KILL DEATH RATIO 25.5+", "VICTORY RATE 98.7%", "HEADSHOT ACCURACY 99.2%", "TOTAL MATCHES 15000+",
+            "SURVIVAL RATE 96.3%", "AVERAGE DAMAGE 85000+", "TOTAL ELIMINATIONS 50000+", "TOP ONE ACHIEVEMENTS 8000+",
+            "LONGEST KILL STREAK 47", "MOST KILLS PER MATCH 38", "FASTEST VICTORY TIME 12MIN", "LONGEST SURVIVAL 45MIN",
+            "SNIPER ACCURACY 97.8%", "ASSAULT RIFLE MASTERY 99%", "SHOTGUN PRECISION 95.4%", "SMG CONTROL 98.1%",
+            "GRENADE THROWS 89.6%", "MELEE COMBAT 92.7%", "VEHICLE CONTROL 94.3%", "BUILDING DESTRUCTION 96.8%",
+            "ZONE PREDICTION 88.9%", "LOOT EFFICIENCY 93.2%", "TEAM COORDINATION 97.5%", "SOLO PERFORMANCE 99.1%",
+            "DUO DOMINANCE 95.7%", "SQUAD LEADERSHIP 98.3%", "CLUTCH SITUATIONS 91.4%", "COMEBACK VICTORIES 87.6%"
+        ];
+
+        const motivationalQuotes = [
+            "FEAR IS FOR THE WEAK MINDED", "LEGENDS NEVER DIE THEY EVOLVE", "VICTORY OR DEATH NO MIDDLE GROUND",
+            "PAIN IS TEMPORARY GLORY IS ETERNAL", "RISE ABOVE ALL EXPECTATIONS", "UNSTOPPABLE FORCE MEETS NOTHING",
+            "PERFECTION IS THE ONLY STANDARD", "EXCELLENCE IS NOT NEGOTIABLE", "DOMINANCE IS MY BIRTHRIGHT",
+            "FAILURE IS NOT AN OPTION EVER", "WEAKNESS WILL NOT BE TOLERATED", "MERCY IS FOR THE DEFEATED",
+            "STRENGTH THROUGH STRUGGLE ALWAYS", "POWER THROUGH PERSISTENCE FOREVER", "GREATNESS THROUGH SACRIFICE ONLY",
+            "HONOR THROUGH VICTORY ALONE", "RESPECT THROUGH DOMINATION PURELY", "FAME THROUGH DESTRUCTION SOLELY",
+            "LEGACY THROUGH ELIMINATION COMPLETELY", "IMMORTALITY THROUGH LEGEND ENTIRELY", "ETERNITY THROUGH CONQUEST ABSOLUTELY",
+            "INFINITY THROUGH MASTERY TOTALLY", "SUPREMACY THROUGH ANNIHILATION UTTERLY", "TRANSCENDENCE THROUGH PERFECTION WHOLLY",
+            "ASCENSION THROUGH DEVASTATION FULLY", "EVOLUTION THROUGH OBLITERATION COMPLETELY", "TRANSFORMATION THROUGH EXTERMINATION ABSOLUTELY"
+        ];
+
+        const specialTitles = [
+            "BRINGER OF APOCALYPSE", "HARBINGER OF DESTRUCTION", "MASTER OF ANNIHILATION", "LORD OF OBLITERATION",
+            "EMPEROR OF ELIMINATION", "SOVEREIGN OF SLAUGHTER", "DICTATOR OF DEATH", "TYRANT OF TERROR",
+            "COMMANDER OF CHAOS", "GENERAL OF GENOCIDE", "ADMIRAL OF ASSAULT", "CAPTAIN OF CARNAGE",
+            "SERGEANT OF SUFFERING", "LIEUTENANT OF LETHALITY", "MAJOR OF MAYHEM", "COLONEL OF COMBAT",
+            "WARLORD OF WARFARE", "CHIEFTAIN OF CONFLICT", "OVERLORD OF OFFENSE", "SUPREME RULER OF RUIN",
+            "ABSOLUTE MONARCH OF MURDER", "ETERNAL PHARAOH OF PAIN", "DIVINE CAESAR OF CARNAGE", "HOLY KAISER OF KILLING"
+        ];
+
+        const colors = ["FFD700", "FF0000", "00FFFF", "00FF00", "FF00FF", "FFA500", "9999FF", "FF1493", "32CD32", "FF4500", "FFFF00", "FF69B4", "00BFFF", "FF6347", "98FB98", "DDA0DD", "F0E68C", "FF7F50", "20B2AA", "DA70D6"];
+        const symbols = ["★", "♦", "◆", "▲", "●", "►", "◄", "✦", "▼", "◢", "◣", "▬", "※", "◊", "▪", "▫", "■", "□", "▲", "△"];
+
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function getRandomColor() {
+            return getRandomElement(colors);
+        }
+
+        function createColoredText(text, useSymbols = true) {
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
+            const symbol = useSymbols ? getRandomElement(symbols) : "";
+            
+            if (useSymbols) {
+                return `[b][c][${color1}]${symbol} [${color2}]${text} [${color1}]${symbol}[/c][/b]`;
+            } else {
+                return `[b][c][${color1}]${text}[/c][/b]`;
+            }
+        }
+
+        function generateSingleBio() {
+            let bio = "";
+            
+            // السطر الأول - عنوان رئيسي
+            bio += createColoredText(getRandomElement(legendaryWords)) + "\n";
+            
+            // خط فاصل
+            const separator = "▬".repeat(25);
+            bio += createColoredText(separator, false) + "\n";
+            
+            // السطر الثاني - لقب قوي
+            bio += createColoredText(getRandomElement(powerTitles)) + "\n";
+            
+            // السطر الثالث - عبارة تحفيزية طويلة
+            bio += createColoredText(getRandomElement(actionPhrases)) + "\n";
+            
+            // السطر الرابع - لقب خاص
+            bio += createColoredText(getRandomElement(specialTitles)) + "\n";
+            
+            // السطر الخامس - إحصائية
+            bio += createColoredText(getRandomElement(gameStats)) + "\n";
+            
+            // السطر السادس - إحصائية أخرى
+            bio += createColoredText(getRandomElement(gameStats)) + "\n";
+            
+            // خط فاصل
+            bio += createColoredText(separator, false) + "\n";
+            
+            // السطر السابع - اقتباس تحفيزي طويل
+            bio += createColoredText(getRandomElement(motivationalQuotes)) + "\n";
+            
+            // السطر الثامن - لقب نهائي
+            bio += createColoredText(getRandomElement(powerTitles)) + "\n";
+            
+            // السطر التاسع - عبارة أخيرة
+            bio += createColoredText(getRandomElement(actionPhrases)) + "\n";
+            
+            // خط فاصل نهائي
+            const finalSeparator = "━".repeat(20);
+            bio += createColoredText(finalSeparator, false);
+            
+            return bio;
+        }
+
+        function generateBios() {
+            const container = document.getElementById('biosContainer');
+            container.innerHTML = '';
+            
+            for (let i = 1; i <= 10; i++) {
+                // إنشاء div للكود الخام
+                const bioDiv = document.createElement('div');
+                bioDiv.className = 'bio-option';
+                const bioCode = generateSingleBio();
+                bioDiv.textContent = bioCode;
+                bioDiv.onclick = () => copyBio(bioDiv.textContent);
+                
+                // إنشاء div للمعاينة
+                const previewDiv = document.createElement('div');
+                previewDiv.className = 'bio-preview';
+                previewDiv.innerHTML = convertBBCodeToHTML(bioCode);
+                
+                // إضافة عنوان للاقتراح
+                const titleDiv = document.createElement('div');
+                titleDiv.style.cssText = 'color: #FFD700; font-weight: bold; margin-bottom: 10px; text-align: center; font-size: 16px;';
+                titleDiv.textContent = `الاقتراح رقم ${i}:`;
+                
+                container.appendChild(titleDiv);
+                container.appendChild(previewDiv);
+                container.appendChild(bioDiv);
+            }
+        }
+
+        function convertBBCodeToHTML(bbcode) {
+            let html = bbcode;
+            
+            // إزالة رموز الألوان من النص المعروض
+            html = html.replace(/\[b\]\[c\]\[([A-Fa-f0-9]{6})\]/g, '<span style="color: #$1; font-weight: bold; text-shadow: 0 0 5px rgba(255,255,255,0.3);">');
+            html = html.replace(/\[\/c\]\[\/b\]/g, '</span>');
+            
+            // تحويل أسطر جديدة
+            html = html.replace(/\n/g, '<br>');
+            
+            return html;
+        }
+
+        function copyBio(bioText) {
+            navigator.clipboard.writeText(bioText).then(function() {
+                showNotification();
+            }).catch(function(err) {
+                // fallback للمتصفحات القديمة
+                const textArea = document.createElement('textarea');
+                textArea.value = bioText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification();
+            });
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            setTimeout(function() {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // توليد بايوهات تلقائياً عند تحميل الصفحة
+        window.onload = function() {
+            generateBios();
+        };
+    </script>
+</body>
+</html>
